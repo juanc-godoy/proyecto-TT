@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li class="item item-1"><a href="../index.html">Inicio</a> </li>
+				<li class="item item-2"><a href="./Contacto.html">Contacto</a></li>
+				<li class="item item-3"><a href="./Resena.html">Reseña</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Visitanos en nuestros Locales</h1>
+		<div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0859913576824!2d-58.37353122281172!3d-34.6019869976185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335325f19f9a3%3A0xfd34b93fba734a98!2sLuna%20Park!5e0!3m2!1ses-419!2sar!4v1731353487727!5m2!1ses-419!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<br>
+		<h2>Dejanos tus datos y nos comunicaremos a la brevedad</h2>
+    <form action="https://formspree.io/f/mwpegwrl" method="post">
+      <fieldset>
+        <legend><b>Datos Personales</b></legend>
+        <label for="nombre">Nombre[*]</label>
+        <input class="campo" type="text" name="nombre" id="" size="10" maxlength="25" required>
+				<label for="apellido">Apellido[*]</label>
+				<input class="campo" type="text" name="apellido" id="" size="10" maxlength="15" required>
+				<label for="dni">DNI</label>
+				<input class="campo" type="number" name="dni" id="" required><br><br>
+				<label for="fec_nac">Fecha de Nacimiento</label>
+				<input class="campo" type="date" name="fec_nac" id="" required>
+				<label for="cel">Celular</label>
+				<input class="campo" type="number" name="cel" id="">
+				<label for="correo">E-mail</label>
+				<input class="campo" type="email" name="correo" id=""><br><br>
+				<label for="zona_res">Zona de Residencia</label>
+				<input type="radio" name="zona_res" id="" value="CABA">CABA
+				<input type="radio" name="zona_res" id="" value="GBA">GBA
+				<input type="radio" name="zona_res" id="" value="Prov.Bs.As">Prov.Bs.As
+				<input type="radio" name="zona_res" id="" value="Interior">Interior del Pais
+				<br>
+			</fieldset><br>
+				<label for="comentario">Escriba su consulta</label><br>
+				<textarea class="campo" name="" id="" cols="30" rows="10" placeholder=""></textarea>
+				<br>
+				<input type="checkbox" name="condiciones" id="" required>
+				Acepto los términos y condiciones <br>
+			<input type="submit" value="Enviar Datos">
+			<input type="reset" value="Borrar">
+			<br><br>
+  	</form>
+	</main>
+	<footer>
+    <div>
+      <h3>¡Seguinos en nuestras redes sociales!</h3>
+      <ul>
+        <li class="item item-1"><a href="https://www.instagram.com">Instagram</a></li>
+        <li class="item item-2"><a href="https://x.com/">X</a></li>
+        <li class="item item-3"><a href="https://www.tiktok.com/">TikTok</a></li>
+        <li class="item item-4"><a href="https://www.facebook.com">Facebook</a></li>
+        <li class="item item-5"><a href="https://telegram.org/">Telegram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Todos los derechos reservados, 2024 Tienda Simpson</h4>
+    </div>
+	</footer>
+</body>
+</html>

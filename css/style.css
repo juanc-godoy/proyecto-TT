@@ -1,0 +1,142 @@
+  /*
+  https://www.colorhunt.co/palette/243642387478629584e2f1e7 
+  rgb(36, 54, 66)
+  rgb(56, 116, 120)
+  rgb(98, 149, 132)
+  rgb(226, 241, 231)
+  */
+
+* {
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Sour Gummy", sans-serif;
+    color: rgb(226, 241, 231);
+}
+body {
+    width: 95%;
+    margin: auto;
+    background-color:rgb(36, 54, 66)
+}
+h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+}
+header {
+    
+    overflow: hidden;
+}
+.card {
+    box-shadow: 5px 10px 10px black;
+    margin: 2px;
+    background-color: rgb(56, 116, 120);
+    border-radius: 10px;
+    width: 33%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-10px)
+}
+.card>img {
+    height: 70%;
+    width: 100%;
+}
+ul {
+    list-style: none;
+}
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(255, 219, 0);
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+}
+.grid-container>div {
+    background-color: rgb(56, 116, 120);
+    border-radius: 10px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.grid-container>div>img{
+    height: 50%;
+    width: 100%;
+}
+
+#banner {
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcreativedog.agency%2Fsite%2Fwp-content%2Fuploads%2F2017%2F09%2Fsimpsons_creativedog_agency_project_featured_image_1800x733.jpg&f=1&nofb=1&ipt=b3de8f8084f6ae99e29aee1e1aedbde115f7787ca9a0d01264658e53584d4658&ipo=images");
+    width: 100%;
+    min-height: 30vh;
+    max-height: 50vh;
+    border-radius: 5px;
+    text-justify: distribute;
+    overflow: hidden;
+}
+
+#banner>h1 {
+    width: 100%;
+    font-size: 4rem;
+}
+footer {
+    border-radius: 5px;
+    background-color: rgb(98, 149, 132);
+    overflow: hidden;
+}
+iframe {
+    width: 100%;
+}
+form>input {
+    color: black;
+    
+}
+
+.campo{
+    background-color: rgb(98, 149, 132);
+}
+
+@media only screen and (max-width:650px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .card {
+        box-shadow: 5px 10px 10px black;
+        margin: 2px;
+        background-color: rgb(56, 116, 120);
+        border-radius: 10px;
+        width: 90%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+    label {
+        display: block;
+    }
+}
