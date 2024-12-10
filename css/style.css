@@ -6,21 +6,29 @@
   rgb(226, 241, 231)
   */
 
+
+  /* otras 2 paletas 
+  https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
+  https://colorhunt.co/palette/4335a780c4e9fff6e9ff7f3e
+  3 mas
+  https://colorhunt.co/palette/1b262c0f4c7500b7c2fdcb9e
+  https://colorhunt.co/palette/eeeeee686d76373a40dc5f00
+  https://colorhunt.co/palette/ff65001e3e620b192c000000
+  */
 * {
     margin: 0%;
 	padding: 0%;
     box-sizing: border-box;
     font-family: "Sour Gummy", sans-serif;
+    text-align: center;
     color: rgb(226, 241, 231);
 }
 body {
   	width: 80%;
   	margin: auto;
   	background-color:rgb(36, 54, 66);
-	
 }
 #banner {
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcreativedog.agency%2Fsite%2Fwp-content%2Fuploads%2F2017%2F09%2Fsimpsons_creativedog_agency_project_featured_image_1800x733.jpg&f=1&nofb=1&ipt=b3de8f8084f6ae99e29aee1e1aedbde115f7787ca9a0d01264658e53584d4658&ipo=images");
     width: 100%;
     min-height: 30vh;
     max-height: 50vh;
@@ -53,36 +61,59 @@ a:hover {
 h1,h2,h3,h4,h5,h6 {
     text-align: center;
 }
-.cards-container {
-	width: 100%;
+/* LISTA DE PRODUCTOS */
+#listaProductos {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 	row-gap: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+    padding: 20px 0px;
 }
-.card {
+.producto {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
     overflow: hidden;
     box-shadow: 5px 10px 10px black;
-    
     background-color: rgb(56, 116, 120);
     border-radius: 10px;
-    width: 32%;
+    width: 33%;
     height: 70vh;
-    
 }
-.card>img {
-    height: 70%;
-    width: 100%;
-}
-.card:hover {
+.producto:hover {
     transform: translateY(-15px);
 	box-shadow: 10px 10px 10px black;
+}
+.producto-img {
+    overflow: hidden;
+    height: 60%;
+    width: 100%;
+}
+img {
+    width: 100%;
+    
+}
+.producto-info {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    align-content: space-between;
+}
+.btn {
+    background-color: orangered;
+}
+/* CARRITO */
+#carrito {
+    display: flex;
+    flex-direction: column;
+    background-color: darkorange;
+}
+.carrito-item {
+    display: flex;
+    flex-direction: row;
 }
 /* FOOTER */
 #footer {
