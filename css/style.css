@@ -1,25 +1,19 @@
-  /*
-  https://www.colorhunt.co/palette/243642387478629584e2f1e7 
-  rgb(36, 54, 66)
-  rgb(56, 116, 120)
-  rgb(98, 149, 132)
-  rgb(226, 241, 231)
-  */
   /* otras 2 paletas 
   https://colorhunt.co/palette/4335a780c4e9fff6e9ff7f3e
   https://colorhunt.co/palette/1b262c0f4c7500b7c2fdcb9e
   https://colorhunt.co/palette/eeeeee686d76373a40dc5f00
   https://colorhunt.co/palette/ff65001e3e620b192c000000
   
-  ACTUAL:
+  PALETA ACTUAL:
   https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
   */
 :root {
-    --1: rgb(120, 179, 206);
-    --2: rgb(201, 230, 240);
-    --3: rgb(251, 248, 239);
-    --4: rgb(249, 110, 42);
-    --5: rgb(0, 0, 0);
+    --1skyblue: rgb(120, 179, 206);
+    --2lightSkyblue: rgb(201, 230, 240);
+    --3pink: rgb(251, 248, 239);
+    --4orange: rgb(249, 110, 42);
+    --5black: rgb(0, 0, 0);
+    --rem: 20px;
 }
 
 * {
@@ -28,36 +22,39 @@
     box-sizing: border-box;
     font-family: "Sour Gummy", sans-serif;
     text-align: center;
-    color: var(--5);
+    color: var(--5black);
 }
 body {
-  	width: 80%;
+  	width: 90%;
   	margin: auto;
-  	background-color:var(--1);
+    background: linear-gradient(var(--2lightSkyblue) , var(--1skyblue));
 }
-#banner {
+#bannerContenedor {
     width: 100%;
-    min-height: 30vh;
-    max-height: 50vh;
-    border-radius: 5px;
-    text-justify: distribute;
-    overflow: hidden;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
 }
-#banner>h1 {
-    width: 100%;
-    font-size: 4rem;
+#bannerImg {
+    margin: auto;
+    width: 200px;
+    border-radius: 50%;
+    aspect-ratio: 1; /* Se ajusta al mismo valor que el width */
+    object-fit: cover;
+}
+#bannerTexto {
+    font-size: 7rem;
+    font-weight: 500;
 }
 
 ul {
   	list-style: none;
 }
 a {
-  	font-size: 1.5rem;
   	text-decoration: none;
 }
-a:hover {
-  	color: rgb(255, 219, 0);
-}
+
 #nav-list {
   	display: flex;
   	flex-direction: row;
@@ -65,104 +62,119 @@ a:hover {
 	flex-wrap: wrap;
 	overflow: hidden;
 }
-h1,h2,h3,h4,h5,h6 {
-    text-align: center;
+.nav-item {
+    font-size: 1.5rem;
+    transition: 1.5s;
+}
+.nav-item:hover {
+    transform: scale(1.1) ;
 }
 /* LISTA DE PRODUCTOS */
 #listaProductos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
     width: 100%;
-	row-gap: 20px;
-    padding: 20px 0px;
+    padding: 1rem 0rem;
 }
 .producto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    box-shadow: 5px 10px 10px var(--5);
-    background-color: var(--1);
-    border-radius: 10px;
-    width: 33%;
-    height: 70vh;
+    background-color: var(--3pink);
+    box-shadow: 5px 10px 10px var(--5black);
+    border-radius: 1rem;
+    height: 50vh;
 }
 .producto:hover {
-    transform: translateY(-15px);
-	box-shadow: 10px 10px 10px var(--5);
+    transform: translateY(-10px);
+	box-shadow: 10px 10px 10px var(--5black);
 }
-.producto-img {
+.producto-img-contenedor {
     overflow: hidden;
-    height: 60%;
+    height: 50%;
     width: 100%;
 }
 img {
     width: 100%;
-    
 }
 .producto-info {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-content: space-between;
-    padding: .5rem;
+    justify-content: space-between;
+    padding: .25rem;
+    border-radius: 1.5rem;
 }
-.btn {
-    background-color: orangered;
+#infoNombre {
+    overflow-y: hidden;
+}
+
+.botonAgregar {
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    border: 2px solid var(--4orange);
+    background-color: var(--4orange);
+    color: var(--3pink);
+    cursor: pointer;
+    padding: 0.3rem 0rem;
+}
+.botonAgregar:hover {
+    background-color: var(--3pink);
+    color: var(--4orange);
 }
 /* CARRITO */
 #listaCarrito {
     display: flex;
     flex-direction: column;
-    background-color: var(--2);
+    gap: 1rem;
+    background-color: var(--2lightSkyblue);
 }
 .carrito-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0.25rem;
+    background-color: var(--3pink);
 }
 .img-mini {
-    width: 3rem;
+    width: 5rem;
 }
 /* FOOTER */
 #footer {
-    background-color: var(--4);
+    padding: 0.5rem 0rem;
 }
-#footer-list {
+#footer-contenedor {
+    display: grid;
+	grid-template-columns: 1fr 2fr;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 1rem;
     overflow: hidden;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	
+    
+
 }
-.footer-item {
-	align-self: center;
+#footer-seguinos {
+	font-size: 2rem;
 }
-#redes-list {
-	margin: auto;
+
+#footer-redes-list {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	align-content: center;
+	justify-content: space-around;
 	overflow: hidden;
 }
 .redes-icono {
 	align-self: center;
 }
+#copyright {
+    font-size: 1.25rem;
+    color: var(--2lightSkyblue);
+}
 /* CONTACTO */
 iframe {
     width: 100%;
-}
-form>input {
-    color: black;
-    
-}
-.campo{
-    background-color: rgb(98, 149, 132);
 }
 /* RESENAS */
 .grid-container {

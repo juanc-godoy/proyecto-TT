@@ -23,37 +23,18 @@ async function mostrarProductos() {
 		const div= document.createElement("div")
 		div.classList.add("producto")
 		div.innerHTML= `
-		<div class="producto-img">
-			<img src="${prod.image}" alt="bah">
+		<div class="producto-img-contenedor">
+			<img class="producto-img" src="${prod.image}" alt="bah">
 		</div>
 		<div class="producto-info">
-			<h2 class="info-item">${prod.title||"bah"}</h2>
+			<h2 class="info-item" id="infoNombre">${prod.title||"bah"}</h2>
 	  		<p class="info-item">U$S ${prod.price||"bah"}</p>
-			<p class="info-item">STOCK: ${prod.rating.count||"bah"}</p>
-			<button class="botonAgregar" id="${prod.id}">Agregar</button>
+			<button class="botonAgregar btn" id="${prod.id}">Agregar</button>
 		</div>
 		`
 		listaProductos.append(div)
 	}
 	actualizarBotonesAgregar();
-}
-
-function mostrarCarrito() {
-	carrito= JSON.parse(localStorage.getItem("carrito"))
-	if (carrito) {
-		for (item of carrito) {
-			const div= document.createElement("div")
-			div.classList.add("carrito-item")
-			div.innerHTML= `
-				<img class="img-mini" src="${item.image}" alt="bah">
-				<p>${item.price}</p>
-				<p>Cantidad: ${item.cantidad}</p>
-				<p>Subtotal: ${item.price*item.cantidad}</p>
-				<button class="btn eliminar" id=>Eliminar</button>
-			`
-			listaCarrito.append(div)
-		}
-	}
 }
 
 function actualizarBotonesAgregar() {
@@ -64,11 +45,31 @@ function actualizarBotonesAgregar() {
 	});
 }
 
+function mostrarCarrito() {
+	listaCarrito.innerHTML= ``
+	carrito= JSON.parse(localStorage.getItem("carrito"))
+
+	if (carrito) {
+		for (item of carrito) {
+			const div= document.createElement("div")
+			div.classList.add("carrito-item")
+			div.innerHTML= `
+				<img class="img-mini" src="${item.image}" alt="bah">
+				<p>${item.price}</p>
+				<p>Cantidad: ${item.cantidad}</p>
+				<p>Subtotal: ${item.price*item.cantidad}</p>
+				<button class="eliminar btn" id=>Eliminar</button>
+			`
+			listaCarrito.append(div)
+		}
+	}
+}
 
 async function agregarAlCarrito(e) {
 	const idBoton= parseInt(e.currentTarget.id);
 	const productos= await fetchProductos();
 	const productoAgregado= await productos.find(producto => producto.id===idBoton);
+	carrito= JSON.parse(localStorage.getItem("carrito"))||[]
 	if (carrito.some(producto => producto.id===idBoton)){
 		const index= carrito.findIndex(producto => producto.id === idBoton);
 		carrito[index].cantidad++;
