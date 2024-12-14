@@ -5,28 +5,35 @@
   rgb(98, 149, 132)
   rgb(226, 241, 231)
   */
-
-
   /* otras 2 paletas 
-  https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
   https://colorhunt.co/palette/4335a780c4e9fff6e9ff7f3e
-  3 mas
   https://colorhunt.co/palette/1b262c0f4c7500b7c2fdcb9e
   https://colorhunt.co/palette/eeeeee686d76373a40dc5f00
   https://colorhunt.co/palette/ff65001e3e620b192c000000
+  
+  ACTUAL:
+  https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
   */
+:root {
+    --1: rgb(120, 179, 206);
+    --2: rgb(201, 230, 240);
+    --3: rgb(251, 248, 239);
+    --4: rgb(249, 110, 42);
+    --5: rgb(0, 0, 0);
+}
+
 * {
     margin: 0%;
 	padding: 0%;
     box-sizing: border-box;
     font-family: "Sour Gummy", sans-serif;
     text-align: center;
-    color: rgb(226, 241, 231);
+    color: var(--5);
 }
 body {
   	width: 80%;
   	margin: auto;
-  	background-color:rgb(36, 54, 66);
+  	background-color:var(--1);
 }
 #banner {
     width: 100%;
@@ -76,15 +83,15 @@ h1,h2,h3,h4,h5,h6 {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    box-shadow: 5px 10px 10px black;
-    background-color: rgb(56, 116, 120);
+    box-shadow: 5px 10px 10px var(--5);
+    background-color: var(--1);
     border-radius: 10px;
     width: 33%;
     height: 70vh;
 }
 .producto:hover {
     transform: translateY(-15px);
-	box-shadow: 10px 10px 10px black;
+	box-shadow: 10px 10px 10px var(--5);
 }
 .producto-img {
     overflow: hidden;
@@ -99,25 +106,29 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
     align-content: space-between;
+    padding: .5rem;
 }
 .btn {
     background-color: orangered;
 }
 /* CARRITO */
-#carrito {
+#listaCarrito {
     display: flex;
     flex-direction: column;
-    background-color: darkorange;
+    background-color: var(--2);
 }
 .carrito-item {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.img-mini {
+    width: 3rem;
 }
 /* FOOTER */
 #footer {
-    background-color: rgb(98, 149, 132);
+    background-color: var(--4);
 }
 #footer-list {
     width: 100%;
@@ -161,7 +172,7 @@ form>input {
     gap: 10px;
 }
 .grid-container>div {
-    background-color: rgb(56, 116, 120);
+    background-color: var(--3);
     border-radius: 10px;
     height: 70vh;
     display: flex;
