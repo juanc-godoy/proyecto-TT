@@ -13,7 +13,6 @@
     --3pink: rgb(251, 248, 239);
     --4orange: rgb(249, 110, 42);
     --5black: rgb(0, 0, 0);
-    --rem: 20px;
 }
 
 * {
@@ -25,9 +24,10 @@
     color: var(--5black);
 }
 body {
-  	width: 90%;
+    width: 90%;
   	margin: auto;
     background: linear-gradient(var(--2lightSkyblue) , var(--1skyblue));
+    min-height: 100vh;
 }
 #bannerContenedor {
     width: 100%;
@@ -38,7 +38,7 @@ body {
 }
 #bannerImg {
     margin: auto;
-    width: 200px;
+    width: 90%;
     border-radius: 50%;
     aspect-ratio: 1; /* Se ajusta al mismo valor que el width */
     object-fit: cover;
@@ -107,7 +107,8 @@ img {
     border-radius: 1.5rem;
 }
 #infoNombre {
-    overflow-y: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .botonAgregar {
@@ -151,8 +152,6 @@ img {
     width: 100%;
     border-radius: 1rem;
     overflow: hidden;
-    
-
 }
 #footer-seguinos {
 	font-size: 2rem;
@@ -164,19 +163,41 @@ img {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	overflow: hidden;
+    align-content: center;
 }
 .redes-icono {
-	align-self: center;
+    width: 2rem;
+    transition: 1.5s;
+}
+.redes-icono:hover {
+    transform: scale(1.2);
 }
 #copyright {
     font-size: 1.25rem;
     color: var(--2lightSkyblue);
 }
-/* CONTACTO */
+/* PAG CONTACTO */
+#contacto-contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 1rem 0rem;
+}
+.contacto-item {
+    width: 49%;
+}
 iframe {
+    border-radius: 1rem;
+    overflow: hidden;
     width: 100%;
 }
-/* RESENAS */
+form {
+    font-size: 1.1rem;
+}
+
+/* PAG RESENAS */
 .grid-container {
     width: 100%;
     display: grid;
@@ -199,6 +220,24 @@ iframe {
 }
 /* MEDIA QUERIES */
 @media screen and (max-width:900px) {
+        #bannerTexto {
+        font-size: 5rem;
+    }
+
+    #listaProductos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .producto {
+        height: 55vh;
+    }
+    .botonAgregar {
+        font-size: 0.9rem;
+        padding: 0.1rem 0rem;
+    }
+
+    #footer-seguinos {
+        font-size: 1.5rem;
+    }
     .card {
         width: 49%;
         height: 50vh;
@@ -207,12 +246,41 @@ iframe {
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
+
+
 }
 
 @media screen and (max-width:550px) {
-    body {
-        width: 90%;
+    #bannerContenedor {
+        grid-template-columns: 1.5fr 2.5fr ;
     }
+    #bannerTexto {
+        font-size: 3rem;
+    }
+
+    #listaProductos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .producto {
+        height: 60vh;
+    }
+    .botonAgregar {
+        font-size: 0.8rem;
+        padding: 0.1rem 0rem;
+    }
+    #footer-seguinos {
+        font-size: 1rem;
+    }
+
+    #contacto-contenedor {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0rem;
+    }
+    .contacto-item {
+        width: 100%;
+    }
+
     .cards-container {
         flex-direction: column;
     }
@@ -226,4 +294,5 @@ iframe {
     .grid-container {
         grid-template-columns: 1fr;
     }
+    
 }
