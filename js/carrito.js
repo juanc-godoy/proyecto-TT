@@ -1,7 +1,3 @@
-console.log("Hola")
-const listaCarrito= document.querySelector("#listaCarrito")
-let botonesEliminar= document.querySelectorAll(".botonEliminar")
-
 function eliminarProducto(e) {
     const idBoton= parseInt(e.currentTarget.id);
     carrito= JSON.parse(localStorage.getItem("carrito"))
@@ -38,18 +34,37 @@ function mostrarCarrito() {
 			const div= document.createElement("div")
 			div.classList.add("carrito-item")
 			div.innerHTML= `
-				<img class="img-mini" src="${item.image}" alt="bah">
-				<p>${item.price}</p>
-				<p>Cantidad: ${item.cantidad}</p>
-				<p>Subtotal: ${item.price*item.cantidad}</p>
+				<div class ="item-img-cont">
+                    <img class="img-mini" src="${item.image}" alt="bah">
+				</div>
+                <p>Precio<br>US$${item.price}</p>
+				<p>Cantidad<br>${item.cantidad}</p>
+				<p>Subtotal<br>${item.price*item.cantidad}</p>
 				<button class="botonEliminar" id=${item.id}>Eliminar</button>
 			`
 			listaCarrito.append(div)
 		}
 	}
     actualizarBotonesEliminar()
+    /* if (carrito.lenght>0) {
+        accionesCarrito()
+    }
+    function accionesCarrito() {
+        const div= document.createElement("div")
+		div.classList.add("acciones")
+		div.innerHTML= `
+			<button id="vaciarCarrito">Vaciar Carrito</button>
+            <button id="comprarCarrito">Finalizar Compra</button>
+            <div id="totalCompra"> </div>
+        `
+    }
+
+    */
 }
 
 /* INICIO */
+console.log("Hola")
+const listaCarrito= document.querySelector("#listaCarrito")
+let botonesEliminar= document.querySelectorAll(".botonEliminar")
 mostrarCarrito()
 actualizarBotonesEliminar()

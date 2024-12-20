@@ -42,6 +42,10 @@ function actualizarBotonesAgregar() {
 	});
 }
 
+function actualizarNumero() {
+		let numero= carrito.reduce()
+}
+
 async function agregarAlCarrito(e) {
 	const idBoton= parseInt(e.currentTarget.id);
 	const productos= await fetchProductos();
@@ -55,7 +59,10 @@ async function agregarAlCarrito(e) {
 		carrito.push(productoAgregado);
 	}
 	localStorage.setItem("carrito", JSON.stringify(carrito))
-	/* actualizarCarrito() */
+	/* actualizarCarrito()
+	
+	*/
+
 }
 
 /* INICIO*/

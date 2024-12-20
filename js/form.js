@@ -3,8 +3,6 @@ let email= document.getElementById("email");
 let error= document.getElementById("error");
 let form= document.getElementById("form");
 
-error.style.color="red";
-
 
 function validacion() {
     console.log("Enviando formulario")

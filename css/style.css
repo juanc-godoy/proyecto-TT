@@ -1,34 +1,50 @@
-  /* otras 2 paletas 
-  https://colorhunt.co/palette/4335a780c4e9fff6e9ff7f3e
-  https://colorhunt.co/palette/1b262c0f4c7500b7c2fdcb9e
-  https://colorhunt.co/palette/eeeeee686d76373a40dc5f00
-  https://colorhunt.co/palette/ff65001e3e620b192c000000
+/* otras 2 paletas 
+https://colorhunt.co/palette/4335a780c4e9fff6e9ff7f3e
+https://colorhunt.co/palette/1b262c0f4c7500b7c2fdcb9e
+https://colorhunt.co/palette/eeeeee686d76373a40dc5f00
+https://colorhunt.co/palette/ff65001e3e620b192c000000
   
-  PALETA ACTUAL:
-  https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
-  */
+PALETA ACTUAL:
+https://colorhunt.co/palette/78b3cec9e6f0fbf8eff96e2a
+*/
 :root {
-    --1skyblue: rgb(120, 179, 206);
-    --2lightSkyblue: rgb(201, 230, 240);
-    --3pink: rgb(251, 248, 239);
-    --4orange: rgb(249, 110, 42);
-    --5black: rgb(0, 0, 0);
+  --1skyblue: rgb(120, 179, 206);
+  --2lightSkyblue: rgb(201, 230, 240);
+  --3pink: rgb(251, 248, 239);
+  --4orange: rgb(249, 110, 42);
+  --5black: rgb(0, 0, 0);
 }
-
 * {
-    margin: 0%;
+  margin: 0%;
 	padding: 0%;
-    box-sizing: border-box;
-    font-family: "Sour Gummy", sans-serif;
-    text-align: center;
-    color: var(--5black);
+  box-sizing: border-box;
+  font-family: "Sour Gummy", sans-serif;
+  text-align: center;
+  color: var(--5black);
 }
 body {
-    width: 90%;
-  	margin: 0 auto;
-    background: linear-gradient(var(--2lightSkyblue) , var(--1skyblue));
-    min-height: 100vh;
+  padding: 0% 5%;
+  background: linear-gradient(var(--2lightSkyblue) , var(--1skyblue));
+  min-height: 100vh;
 }
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.navbar-brand {
+	transition: 1.5s;
+}
+.nav-item {
+  font-size: 1.25rem;
+  transition: 1.5s;
+}
+.nav-item:hover, .navbar-brand:hover {
+  transform: scale(1.1) ;
+}
+/* BANNER */
+
 #bannerContenedor {
     width: 100%;
     margin: auto;
@@ -40,36 +56,15 @@ body {
     margin: auto;
     width: 90%;
     border-radius: 50%;
-    aspect-ratio: 1; /* Se ajusta al mismo valor que el width */
+    aspect-ratio: 1;
     object-fit: cover;
 }
 #bannerTexto {
     font-size: 7rem;
     font-weight: 500;
 }
-
-ul {
-  	list-style: none;
-}
-a {
-  	text-decoration: none;
-}
-
-#nav-list {
-  	display: flex;
-  	flex-direction: row;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	overflow: hidden;
-}
-.nav-item {
-    font-size: 1.5rem;
-    transition: 1.5s;
-}
-.nav-item:hover {
-    transform: scale(1.1) ;
-}
 /* LISTA DE PRODUCTOS */
+
 #listaProductos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -77,6 +72,7 @@ a {
     width: 100%;
     padding: 1rem 0rem;
 }
+
 .producto {
     display: flex;
     flex-direction: column;
@@ -127,20 +123,42 @@ img {
 }
 /* CARRITO */
 #listaCarrito {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: var(--2lightSkyblue);
 }
 .carrito-item {
+    height: 15vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0.25rem;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0.25rem 0.12rem;
     background-color: var(--3pink);
+    overflow: hidden;
 }
-.img-mini {
-    width: 5rem;
+.item-img-cont {
+    max-height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 5rem;
+}
+.botonEliminar {
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    border: 2px solid var(--4orange);
+    background-color: var(--4orange);
+    color: var(--3pink);
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+}
+.botonEliminar:hover {
+    border: 2px solid var(--5black);
+    background-color: var(--5black);
+
 }
 /* FOOTER */
 #footer {
@@ -195,6 +213,9 @@ iframe {
 }
 form {
     font-size: 1.1rem;
+}
+#error {
+    color: red;
 }
 
 /* PAG RESENAS */
